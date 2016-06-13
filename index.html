@@ -1,64 +1,183 @@
 <!DOCTYPE html>
-<html lang="en-us">
-  <head>
-    <meta charset="UTF-8">
-    <title>OpenBEL Development Overview by OpenBEL</title>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" type="text/css" href="stylesheets/normalize.css" media="screen">
-    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
-    <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen">
-    <link rel="stylesheet" type="text/css" href="stylesheets/github-light.css" media="screen">
-  </head>
-  <body>
-    <section class="page-header">
-      <h1 class="project-name">OpenBEL Development Overview</h1>
-      <h2 class="project-tagline">code contribution and development communication guidelines, etc</h2>
-    </section>
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <title>OpenBEL</title>
+    <script src="https://use.fontawesome.com/d0c4fd9c38.js"></script>
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+    <!-- HTML5 shim and Respond.js I am a IE8 support of HTML5 elements and media querie -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    <link href="https://fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300italic,400,400italic,600,700" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="belstyles.css">
+    <link rel="stylesheet" href="styles.css">
+    <!-- favicon -->
+    <link rel="shortcut icon" type="image/png" href="favicon.png" />
+    <!-- <link rel="shortcut icon" type="image/png" href="http://eg.com/favicon.png"/> -->
+</head>
 
-    <section class="main-content">
-      <h3>
-<a id="welcome-to-openbel-development" class="anchor" href="#welcome-to-openbel-development" aria-hidden="true"><span class="octicon octicon-link"></span></a>Welcome to OpenBEL Development</h3>
+<body>
+    <div class="body-html">
+        <!-- <div class="container-fluid"> -->
+        <div class="navbar navbar-default">
+            <div class="col-xs-12">
+                <a class="navbar-brand" href="#">
+                    <img class="navbar-logo" alt="bel-logo" src="media/bel300x.png">
+                    <span class="navbar-header-title">OpenBEL</span>
+                </a>
+            </div>
+        </div>
+        <div class="container ">
+            <div class="row">
+                <!--                 <div class="col-xs-12 ">
+                    <h4>What is BEL?</h4>
+                    <p>BEL is a language for representing scientific findings in the life sciences in a computable form. BEL is designed to represent scientific findings by capturing causal and correlative relationships in context, where context can include information about the biological and experimental system in which the relationships were observed, the supporting publications cited and the process of curation.
+                    </p>
+                    <p>BEL is intended as a knowledge capture and interchange medium, supporting the operation of systems that integrate knowledge derived from independent efforts. The language is designed to be use-neutral, facilitating the storage and use of structured knowledge for inference by applications through a knowledge assembly process that can create computable biological networks. While BEL does not prescribe any particular assembly process or any particular knowledge format for the output of an assembly process, a suite of software components called the BEL Framework provides everything necessary to create, compile, assemble, and deliver computable knowledge models to BEL-aware applications.
+                    </p>
+                    <p>The current version of BEL provides the means to describe biological interactions qualitatively but not to quantify the magnitude or rate of these interactions. This limitation is by design because this quantitative information has significant variability and is not consistently reported in the literature. It is our hope that future versions of BEL can accommodate these additional data, and that <em>YOU are able to work together with the OpenBEL Consortium to make this happen.</em>
+                    </p>
+                </div> -->
+                <div class="col-xs-12 col-sm-6 marginbtm10">
+                    <h3>Language</h3>
+                    <p>The Biological Expression Language (BEL) is a language for representing scientific findings in the life sciences in a computable form. BEL is designed to represent scientific findings by capturing causal and correlative relationships in context, where context can include information about the biological and experimental system in which the relationships were observed, the supporting publications cited and the curation process used.</p>
+                    <a href="http://openbel.github.io/language/web/version_2.0/bel_specification_version_2.0.html" target="_blank">BEL Language 2.0</a> |
+                    <a href="http://openbel.github.io/language/web/index.html" target="_blank">BEL Language Resources Directory</a>
+                    <h3>Communication Channels</h3>
+                    <ul>
+                        <li>
+                            <h5><em class="conversational">Real-time communication</em>: <a href="https://gitter.im/OpenBEL/chat">Gitter</a></h5>
+                            <p>Gitter is used for real-time chat. You can reference OpenBEL issues like OpenBEL/bel.rb#73. You can also mention one or all users in the chat which will provide them with a desktop notification.</p>
+                        </li>
+                        <li>
+                            <h5><em class="conversational">BEL Language Questions - how to capture biology in BEL</em>: <a href="http://biology.stackexchange.com/">StackExchange</a></h5>
+                            <p>StackExchange has the best Q&A system available with the ability to show multiple potential answers and allow users to vote on the best ones.</p>
+                            <!-- <a href="https://gitter.im/OpenBEL/chat">https://gitter.im/OpenBEL/chat</a> -->
+                        </li>
+                        <li>
+                            <h5><em class="conversational">Discussion</em>: <a href="https://groups.google.com/forum/#!forum/openbel-discuss">Google Groups</a></h5>
+                            <p>Google Groups is used for OpenBEL discussions and troubleshooting help.</p>
+                        </li>
+                        <li>
+                            <h5><em class="conversational">Face-to-face Meetings</em>: Google Hangouts</h5>
+                            <p>Google Hangout can be used to hold face-to-face meetings.</p>
+                            <p>Follow instructions on the <a href="https://wiki.openbel.org/display/OM/Google+Hangouts">Google Hangouts</a> page.</p>
+                        </li>
+                    </ul>
+                </div>
+                <!-- By profession -->
+                <div class="col-xs-12 col-sm-6" id="accordion" role="tablist" aria-multiselectable="true">
+                    <h3 class="conversational">Get started with BEL</h3>
+                    <div class="panel panel-default">
+                        <div class="panel-heading" role="tab" id="headingOne">
+                            <h4 class="panel-title">
+        						<a data-toggle="collapse" data-parent="#accordion" href="#profOne" aria-expanded="false" aria-controls="collapseOne">I am a Biologist
+        						<i class="fa fa-caret-down" aria-hidden="true"></i>
+        						</a>
+					      	</h4>
+                        </div>
+                        <div id="profOne" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingOne">
+                            <ul>
+                                <li>
+                                    <a href="http://openbel.github.io/language/web/version_2.0/bel_specification_version_2.0.html" target="_blank">BEL Language 2.0</a>
+                                </li>
+                                <li>
+                                    <a href="http://openbel.github.io/language/web/index.html" target="_blank">BEL Language Resources Directory</a>
+                                </li>
+                                <li>
+                                    <a href="https://github.com/OpenBEL/openbel-platform/blob/master/terminology.md" target="_blank">Terminology</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="panel panel-default">
+                        <div class="panel-heading" role="tab" id="headingTwo">
+                            <h4 class="panel-title">
+						        <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#profTwo" aria-expanded="false" aria-controls="collapseTwo">I am a Computational Biologist
+						        <i class="fa fa-caret-down" aria-hidden="true"></i></a>
+						    </h4>
+                        </div>
+                        <div id="profTwo" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo">
+                            <ul>
+                                <li>
+                                    <a href="https://github.com/OpenBEL/openbel-platform/blob/master/architecture.md" target="_blank">Architecture</a>
+                                </li>
+                                <li>
+                                    <a href="http://openbel.github.io/language/web/version_2.0/bel_specification_version_2.0.html" target="_blank">BEL Language 2.0</a>
+                                </li>
+                                <li>
+                                    <a href="http://openbel.github.io/language/web/index.html" target="_blank">BEL Language Resources Directory</a>
+                                </li>
+                                <li>
+                                    <a href="http://jsongraphformat.info/" target="_blank">JSON Graph Format (JGF)</a>
+                                </li>
+                                <li>
+                                    <a href="http://apps.cytoscape.org/apps/jgfapp" target="_blank">JGF App</a>
+                                </li>
+                                <li>
+                                    <a href="https://github.com/OpenBEL/openbel-platform/blob/master/terminology.md" target="_blank">Terminology</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="panel panel-default">
+                        <div class="panel-heading" role="tab" id="headingThree">
+                            <h4 class="panel-title">
+						        <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#profThree" aria-expanded="false" aria-controls="collapseThree">I am a Developer <i class="fa fa-caret-down" aria-hidden="true"></i>
+						       </a>
+						    </h4>
+                        </div>
+                        <div id="profThree" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingThree">
+                            <ul>
+                                <li>
+                                    <a href="https://github.com/OpenBEL/openbel-platform/blob/master/architecture.md" target="_blank">Architecture</a>
+                                </li>
+                                <li>
+                                    <a href="http://jsongraphformat.info/" target="_blank">JSON Graph Format (JGF)</a>
+                                </li>
+                                <li>
+                                    <a href="http://apps.cytoscape.org/apps/jgfapp" target="_blank">JGF App</a>
+                                </li>
+                                <li>
+                                    <a href="http://openbel.github.io/" target="_blank">OpenBEL.Github.io</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <footer>
+        <div class="container footer-body">
+            <div class="row">
+                <div class="col-xs-8 col-xs-offset-4 col-sm-4 col-sm-offset-8 col-md-3 col-md-offset-9">
+                    <ul class="footerUl">
+                        <!-- <li><a href="../welcome.html">Project Overview</a></li> -->
+                        <!-- <li><a href="../about.html">About</a></li> -->
+                        <li><a href="http://www.openbel.org/">OpenBel.org</a></li>
+                        <li><a href="wiki.openbel.org/">OpenBel Wiki Page</a></li>
+                        <li><a href="mailto: info@openbel.org">Contact</a></li>
+                        <!-- <li><a href="#">Additional Resources...</a></li> -->
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!-- jQuery (necessary I am a Bootstrap's JavaScript plugins) -->
+    <!-- <script src="https://ajaxgoogleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script> -->
+    <script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+</body>
 
-<h3>
-<a id="contributing-code" class="anchor" href="#contributing-code" aria-hidden="true"><span class="octicon octicon-link"></span></a>Contributing Code</h3>
-
-<p>Clone the repository that you are changing and submit a PR (Pull Request).  <em>We will need to insure that a CLA (Contributor License Agreement) has been submitted prior to accepting the PR.</em>  You can submit the CLA by following the instructions at <a href="https://github.com/openbel/cla/blob/master/CONTRIBUTING.adoc">CONTRIBUTING</a></p>
-
-<h3>
-<a id="communication-tips" class="anchor" href="#communication-tips" aria-hidden="true"><span class="octicon octicon-link"></span></a>Communication Tips</h3>
-
-<ul>
-<li>For bugs and suggested enhancements, please add an issue to the specific repository.</li>
-<li>For quick coding support, please use our Gitter Channel: <a href="https://gitter.im/OpenBEL/">https://gitter.im/OpenBEL/</a>
-</li>
-<li>For enhancements and proposed changes that are larger than a single issue in a repository, please post a Discussion topic to the Google Group for OpenBEL: <a href="https://groups.google.com/forum/#!forum/openbel-discuss">https://groups.google.com/forum/#!forum/openbel-discuss</a>
-</li>
-</ul>
-
-<h3>
-<a id="maintainers" class="anchor" href="#maintainers" aria-hidden="true"><span class="octicon octicon-link"></span></a>Maintainers</h3>
-
-<ul>
-<li>
-<a href="https://github.com/abargnesi" class="user-mention">@abargnesi</a>, Anthony Bargnesi</li>
-<li>
-<a href="https://github.com/nbargnesi" class="user-mention">@nbargnesi</a>, Nick Bargnesi</li>
-<li>
-<a href="https://github.com/wshayes" class="user-mention">@wshayes</a>, William Hayes</li>
-</ul>
-
-<h3>
-<a id="support-or-contact" class="anchor" href="#support-or-contact" aria-hidden="true"><span class="octicon octicon-link"></span></a>Support or Contact</h3>
-
-<p>Having trouble with anything related to OpenBEL Github?  Use the <a href="https://gitter.im/OpenBEL/">Gitter channel</a> or the <a href="https://groups.google.com/forum/#!forum/openbel-discuss">OpenBEL Google Group</a></p>
-
-      <footer class="site-footer">
-
-        <span class="site-footer-credits">This page was generated by <a href="https://pages.github.com">GitHub Pages</a> using the <a href="https://github.com/jasonlong/cayman-theme">Cayman theme</a> by <a href="https://twitter.com/jasonlong">Jason Long</a>.</span>
-      </footer>
-
-    </section>
-
-  
-  </body>
 </html>
